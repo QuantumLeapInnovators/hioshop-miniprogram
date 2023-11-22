@@ -26,6 +26,6 @@
   padding: 0 2vw;
 }
 .from-btn{
-  width: 50%;
+  width: 200px;
   box-sizing: border-box;
 }

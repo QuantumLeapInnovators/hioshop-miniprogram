@@ -10,6 +10,6 @@
       <input class="form-input" password="true" value="{{password}}" placeholder="密码"/>
     </view>
     <view style="height: 20px;"></view>
-    <button class="from-btn" form-type="submit">登录</button>
+    <button class="from-btn" type="default" form-type="submit">登录</button>
   </form>
 </view>

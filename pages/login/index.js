@@ -7,8 +7,8 @@ const app = getApp()
 
 Page({
     data: {
-      username: "asdf",
-      password: "asdf",
+      username: "",
+      password: "",
       userInfo: {},
       logining: false,
     },
@@ -83,6 +83,9 @@ Page({
               },
               fail:()=>{
                 wx.hideLoading();
+                wx.showToast({
+                  title: '微信登录失败',
+                })
               }
             })
           } else {
@@ -91,6 +94,9 @@ Page({
         },
         fail:()=>{
           wx.hideLoading();
+          wx.showToast({
+            title: '微信登录失败',
+          })
         }
       })
     },
