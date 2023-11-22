@@ -19,11 +19,11 @@ Page({
                 name: 'offline',
                 value: '线下支付'
             },
-            {
-                name: 'online',
-                value: '在线支付',
-                checked: 'true'
-            },
+            // {
+            //     name: 'online',
+            //     value: '在线支付',
+            //     checked: 'true'
+            // },
         ],
         payMethod:1,
     },

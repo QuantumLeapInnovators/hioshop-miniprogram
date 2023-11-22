@@ -1,0 +1,31 @@
+/**index.wxss**/
+
+.container {
+    background-color: #fff;
+    min-height: 100%;
+    align-items: stretch;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+.form-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 2vw 0;
+}
+.form-lable{
+  width: 20vw;
+}
+.form-input{
+  width: 50%;
+  border: 1px solid #999999;
+  height: 10vw;
+  padding: 0 2vw;
+}
+.from-btn{
+  width: 50%;
+  box-sizing: border-box;
+}

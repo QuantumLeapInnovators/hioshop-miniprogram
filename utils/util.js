@@ -107,6 +107,7 @@ function request(url, data = {}, method = "GET") {
                         //     reject(err);
                         // })
                     } else {
+                      checkErrorCode(res.data)
                         resolve(res.data);
                     }
                 } else {
@@ -119,6 +120,16 @@ function request(url, data = {}, method = "GET") {
             }
         })
     });
+}
+
+function checkErrorCode(data){
+  if(data.errno){
+    wx.showToast({
+      title: `${data.errno}:${data.errmsg}`,
+      icon: 'none'
+    })
+  }
+  return data.errno;
 }
 
 /**

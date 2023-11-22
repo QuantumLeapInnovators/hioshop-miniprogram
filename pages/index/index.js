@@ -100,12 +100,7 @@ Page({
     onShow: function () {
         this.getIndexData();
         var that = this;
-        let userInfo = wx.getStorageSync('userInfo');
-        if (userInfo != '') {
-            that.setData({
-                userInfo: userInfo,
-            });
-        };
+        that.goAuth();
         let info = wx.getSystemInfoSync();
         let sysHeight = info.windowHeight - 100;
         this.setData({
@@ -113,6 +108,41 @@ Page({
             autoplay: true
         });
         wx.removeStorageSync('categoryId');
+    },
+    goAuth() {
+      let that = this;
+      let userInfo = wx.getStorageSync('userInfo');
+      if (userInfo != '') {
+          that.setData({
+              userInfo: userInfo,
+          });
+          return;
+      };
+      // let code = '';
+      // wx.login({
+      //   success: (res) => {
+      //     code = res.code;
+      //     that.postLogin(code)
+      //   },
+      // });
+    },
+    postLogin(code) {
+      let that = this;
+      util.request(api.AuthLoginByWeixin, {
+        code: code
+      }, 'POST').then(function (res) {
+        if (res.errno === 0) {
+          let userInfo = res.data.userInfo;
+          that.setData({
+            is_new: res.data.is_new,
+            userInfo: userInfo,
+            hasUserInfo: true
+          })
+          wx.setStorageSync('token', res.data.token);
+          wx.setStorageSync('userInfo', userInfo);
+          app.globalData.token = res.data.token;
+        }
+      });
     },
     getChannelShowInfo: function (e) {
         let that = this;

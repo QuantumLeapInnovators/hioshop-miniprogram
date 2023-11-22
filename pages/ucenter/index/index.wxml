@@ -1,17 +1,17 @@
 <view class="container">
     <view class="userinfo">
-        <view class='head-wrap' wx:if="{{hasUserInfo == false}}" bindtap='goAuth'>
+        <!-- <view class='head-wrap' wx:if="{{hasUserInfo == false}}" bindtap='goAuth'>
             <view class="no-login-avatar">
                 <view class='no-avatar'>
                     <image class='avatar' src="/images/icon/default_avatar_big.png"></image>
                 </view>
                 <view class='btn-login'>点我登录</view>
             </view>
-        </view>
-        <view class='head-wrap' wx:else bindtap='goProfile'>
+        </view> -->
+        <view class='head-wrap' bindtap='goProfile'>
             <view class="head-l">
                 <view class='l'>
-                    <image class='avatar' src="{{root + userInfo.avatar}}"></image>
+                    <image class='avatar' src="{{userInfo.avatar}}"></image>
                 </view>
                 <view class='r'>
                     <view class='t'>

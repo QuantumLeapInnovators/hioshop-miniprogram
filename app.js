@@ -12,19 +12,19 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     // 登录
-    wx.login({
-      success: (res) => {
-        util.request(api.AuthLoginByWeixin, {
-          code: res.code
-        }, 'POST').then(function (res) {
-          if (res.errno === 0) {
-            let userInfo = res.data.userInfo;
-            wx.setStorageSync('token', res.data.token);
-            wx.setStorageSync('userInfo', userInfo);
-          }
-        });
-      },
-    });
+    // wx.login({
+    //   success: (res) => {
+    //     util.request(api.AuthLoginByWeixin, {
+    //       code: res.code
+    //     }, 'POST').then(function (res) {
+    //       if (res.errno === 0) {
+    //         let userInfo = res.data.userInfo;
+    //         wx.setStorageSync('token', res.data.token);
+    //         wx.setStorageSync('userInfo', userInfo);
+    //       }
+    //     });
+    //   },
+    // });
     let that = this;
     wx.getSystemInfo({ //  获取页面的有关信息
       success: function (res) {
@@ -40,7 +40,7 @@ App({
     userInfo: {
       nickname: '点我登录',
       username: '点击登录',
-      avatar: 'http://lucky-icon.meiweiyuxian.com/hio/default_avatar_big.png'
+      avatar: ''
     },
     token: '',
   }

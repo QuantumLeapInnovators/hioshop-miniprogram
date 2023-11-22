@@ -1,4 +1,4 @@
-const ApiRoot = 'http://localhost:8361';
+const ApiRoot = 'http://192.168.2.112:8360';
 // const ApiRoot = 'http://192.168.0.113:8361';
 // const ApiRoot = 'https://www.qile.club:8688';
 const ApiRootUrl = ApiRoot + '/api/'
@@ -7,6 +7,7 @@ module.exports = {
   ApiRoot: ApiRoot,
   // 登录
   AuthLoginByWeixin: ApiRootUrl + 'auth/loginByWeixin', //微信登录
+  AuthLoginByWeixinAndPwd: ApiRootUrl + 'auth/loginByWeixinAndPwd', //微信和密码登录
   // 首页
   IndexUrl: ApiRootUrl + 'index/appInfo', //首页数据接口
   // 分类

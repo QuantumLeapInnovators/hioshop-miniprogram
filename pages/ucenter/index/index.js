@@ -62,12 +62,16 @@ Page({
   goAuth() {
     let code = '';
     let that = this;
-    wx.login({
-      success: (res) => {
-        code = res.code;
-        that.postLogin(code)
-      },
-    });
+    let userInfo = wx.getStorageSync('userInfo');
+    this.setData({
+      userInfo:userInfo
+    }) 
+    // wx.login({
+    //   success: (res) => {
+    //     code = res.code;
+    //     that.postLogin(code)
+    //   },
+    // });
   },
   postLogin(code) {
     let that = this;
@@ -101,6 +105,7 @@ Page({
       if (res.errno === 0) {
         let userInfo = res.data;
         // wx.setStorageSync('userInfo', userInfo);
+        console.info("userInfo", userInfo)
         that.setData({
           userInfo: userInfo,
           hasUserInfo: true
@@ -124,5 +129,5 @@ Page({
         });
       }
     });
-  },
+  }
 })

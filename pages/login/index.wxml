@@ -1,0 +1,15 @@
+<view class="container">
+  <form class="container" bindsubmit="handleGetUserInfo">
+    <view style="height: 20px;"></view>
+    <view class="form-row">
+      <text class="form-lable">用户名：</text>
+      <input class="form-input" type="text" value="{{username}}" placeholder="用户名"/>
+    </view>
+    <view class="form-row">
+      <text class="form-lable">密码：</text>
+      <input class="form-input" password="true" value="{{password}}" placeholder="密码"/>
+    </view>
+    <view style="height: 20px;"></view>
+    <button class="from-btn" form-type="submit">登录</button>
+  </form>
+</view>
